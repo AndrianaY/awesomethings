@@ -1,4 +1,3 @@
-package eckel.exercises.objects;
 /**
  * Created by Andriana on 29.08.2016.
  */
@@ -7,6 +6,7 @@ package eckel.exercises.objects;
  * @author Andriana
  * here is the original sorce code
  * @see Overloading
+ * @version 1.0
  * Here is also some list of some items:
  * <ol>
  *     <li> Item one</li>
@@ -15,6 +15,8 @@ package eckel.exercises.objects;
  * </ol>
  *
  */
+
+package eckel.exercises.objects;
 
 class Tree1 {
     int height;
