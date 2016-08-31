@@ -1,8 +1,7 @@
 package eckel.exercises.controllingexecution;
 
 import java.util.Random;
-import java.lang.Runtime;
-
+//ex2 included
 /**
  * Created by Andriana on 31.08.2016.
  */
