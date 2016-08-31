@@ -12,27 +12,33 @@ public class Exercise5 {
 
         System.out.println(Integer.toBinaryString(bit1 & bit2));
         for(int i = 0; i < 8; i++) {
-            System.out.print((Character.getNumericValue(sBit1.charAt(i)) & (Character.getNumericValue(sBit1.charAt(i)))) == 1 ? 1 : 0);
+            System.out.print((Character.getNumericValue(sBit1.charAt(i)) & (Character.getNumericValue(sBit2.charAt(i)))) == 1
+                    ? 1 : 0);
         }
         System.out.println();
         System.out.println();
 
         System.out.println(Integer.toBinaryString(bit1 ^ bit2));
+
         for(int i = 0; i < 8; i++) {
-            System.out.print((Character.getNumericValue(sBit1.charAt(i)) ^ (Character.getNumericValue(sBit1.charAt(i)))) == 1 ? 1 : 0);
+            System.out.print((Character.getNumericValue(sBit1.charAt(i)) ^ (Character.getNumericValue(sBit2.charAt(i)))) == 1
+                    ? 1 : 0);
         }
         System.out.println();
         System.out.println();
 
         System.out.println(Integer.toBinaryString(bit1 | bit2));
         for(int i = 0; i < 8; i++) {
-            System.out.print((Character.getNumericValue(sBit1.charAt(i)) | (Character.getNumericValue(sBit1.charAt(i)))) == 1 ? 1 : 0);
+            System.out.print((Character.getNumericValue(sBit1.charAt(i)) | (Character.getNumericValue(sBit2.charAt(i)))) == 1
+                    ? 1 : 0);
         }
         System.out.println();
+
         System.out.println();
 
         System.out.println(Integer.toBinaryString(bit1 << bit2));
         System.out.println(Integer.toBinaryString(bit1 >> bit2));
+
         System.out.println(Integer.toBinaryString(bit1 >>> bit2));
     }
 }
