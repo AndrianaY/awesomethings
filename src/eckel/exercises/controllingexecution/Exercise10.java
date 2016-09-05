@@ -9,7 +9,7 @@ package eckel.exercises.controllingexecution;
  2187 = 27 * 81
  Write a program that finds all the 4-digit vampire numbers. (Suggested by Dan Forhan.)
  */
-import net.mindview.util.*;
+
 
 import static net.mindview.util.Print.print;
 
