@@ -22,6 +22,7 @@ public class Exercise10 {
         int firstHorn;
         int secHorn;
         int totalTest = 0;
+        print("something");
 
         for (int i = 1000; i <= 9999; i++){
             firstHorn = i / 100;
