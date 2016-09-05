@@ -21,8 +21,12 @@ public class Exercise10 {
         int[] vN = new int[4];
         int firstHorn;
         int secHorn;
+        Integer[] vampN;
+        Integer[] notVampN;
         int totalTest = 0;
         print("something");
+
+
 
         for (int i = 1000; i <= 9999; i++){
             firstHorn = i / 100;
