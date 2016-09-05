@@ -29,16 +29,15 @@ public class Tank12 {
     protected void finalize(){
         if (isEmpty){
             System.out.println("it is empty - can be collected");
+            try {
+                super.finalize();
+            } catch (Throwable throwable) {
+                throwable.printStackTrace();
+            }
         }
         else {
             System.out.println("need to be empty for GC");
             return;
-        }
-
-        try {
-            super.finalize();
-        } catch (Throwable throwable) {
-            throwable.printStackTrace();
         }
     }
 
