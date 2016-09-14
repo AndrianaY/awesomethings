@@ -41,10 +41,20 @@ public class Exercise17{
         Cycle[] cycles = new Cycle[]{new Bicycle(), new Unicycle(), new Tricycle()};
         for (Cycle c: cycles) {
             c.ride();
-//            Bicycle b = (Bicycle) c;
-//            b.balance();
-//            Unicycle t = (Unicycle) c;
-//            t.balance();
+            try {
+                Bicycle b = (Bicycle) c;
+                b.balance();
+            }
+            catch (Exception e){
+                System.out.println("classcastexeption at runtime");
+            }
+            try {
+                Unicycle t = (Unicycle) c;
+                t.balance();
+            }
+            catch (Exception e){
+                System.out.println("classcastexeption at runtime");
+            }
         }
     }
 }
