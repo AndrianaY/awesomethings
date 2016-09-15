@@ -7,8 +7,6 @@ package eckel.exercises.polymorphism;
 //: polymorphism/PolyConstructors.java
 // Constructors and polymorphism
 // don't produce what you might expect.
-import javax.swing.text.html.parser.Entity;
-
 import static net.mindview.util.Print.*;
 
 class Glyph {
@@ -32,7 +30,6 @@ class SquareGlyph extends Glyph {
 }
 
 class RoundGlyph extends Glyph {
-
     private int radius = 1;
     RoundGlyph(int r) {
         radius = r;
