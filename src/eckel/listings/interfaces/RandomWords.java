@@ -3,6 +3,7 @@ package eckel.listings.interfaces;
 import java.nio.*;
 import java.util.*;
 
+
 public class RandomWords implements Readable {
     private static Random rand = new Random(47);
     private static final char[] capitals =
@@ -14,6 +15,7 @@ public class RandomWords implements Readable {
     private int count;
     public RandomWords(int count) { this.count = count; }
     public int read(CharBuffer cb) {
+
         if(count-- == 0)
             return -1; // Indicates end of input
         cb.append(capitals[rand.nextInt(capitals.length)]);
