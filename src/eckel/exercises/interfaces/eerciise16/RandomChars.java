@@ -9,13 +9,13 @@ import java.util.Random;
  * Created by Andriana on 20.09.2016.
  */
 public class RandomChars {
-    private static Random rand = new Random(47);
-    public char next() { return (char) rand.nextInt(); }
+    private static Random rand = new Random();
+    public char next() { return  (char) (rand.nextInt(170) + 65); }
 
     public static void main(String[] args) {
         RandomChars rd = new RandomChars();
         for(int i = 0; i < 7; i ++)
-            System.out.print(rd.next() + " " + "inside main randomDoubles");
+            System.out.print(rd.next()+"\n");
 
     }
 }

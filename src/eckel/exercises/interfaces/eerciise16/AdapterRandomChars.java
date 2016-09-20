@@ -21,8 +21,8 @@ public class AdapterRandomChars extends RandomChars
     }
     public static void main(String[] args) {
         Scanner s = new Scanner(new AdapterRandomChars(7));
-        while(s.hasNextDouble())
-            System.out.print(s.nextDouble() + " ");
+        while(s.hasNext())
+            System.out.print(s.next() + " ");
 
     }
 }
