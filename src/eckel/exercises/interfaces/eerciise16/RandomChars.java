@@ -10,7 +10,7 @@ import java.util.Random;
  */
 public class RandomChars {
     private static Random rand = new Random();
-    public char next() { return  (char) (rand.nextInt(170) + 65); }
+    public char next() { return  (char) (rand.nextInt(132) + 65); }
 
     public static void main(String[] args) {
         RandomChars rd = new RandomChars();
