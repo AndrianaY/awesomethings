@@ -11,15 +11,39 @@ package eckel.exercises.innerclasses.exercise23;
  * Created by Andriana on 22.09.2016.
  */
 interface U{
+    void printHashCode();
+    void thirdMethod();
+
 
 }
 public class A {
     U produceU(){
         return new U() {
-            @Override
+
             public int hashCode() {
-                return super.hashCode();
+                return Math.round(super.hashCode());
+            }
+            public void printHashCode(){
+                System.out.println("second method" + hashCode());
+            }
+            public void thirdMethod(){
+                System.out.println("third method" + hashCode());
             }
         };
+    }
+
+    public static void main(String[] args) {
+        A a1 = new A();
+        A a2 = new A();
+        A a3 = new A();
+        B b = new B();
+        b.uSet(a1.produceU());
+        b.uSet(a2.produceU());
+        b.uSet(a3.produceU());
+        b.walkThroughU();
+        b.uDelete(1);
+        b.walkThroughU();
+
+
     }
 }
