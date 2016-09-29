@@ -21,15 +21,20 @@ public class Evaluating {
             c = expr.charAt(i);
             if (c == '+') {
                 stack.push(expr.charAt(++i));
-            } else if (c == '-')
+            } else if ((c == '-')||(c == '—')) {
+                System.out.println(stack.peek());
                 stack.pop();
+            }
         }
+
+
     }
 
 
     public static void main(String[] args) {
         Evaluating ev = new Evaluating();
         ev.performEval("+U+n+c—+e+r+t—+a-+i-+n+t+y—+ -+r+u—+l+e+s—");
+        System.out.println();
         while (!ev.stack.empty()) {
              System.out.print(ev.stack.pop());
         }
