@@ -1,5 +1,7 @@
 package mentor;
 
+import java.util.*;
+
 /**
  * Created by Andriana_Yarmoliuk on 8/26/2016.
  */
@@ -14,6 +16,7 @@ public class Mentor1 {
     }
 
     void test(){
+
         if(b[0] && b[1] | b[2])
             count++;
         if(b[1] && b[(++count - 2)])
