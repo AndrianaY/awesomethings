@@ -15,7 +15,8 @@ public class Individual implements Comparable<Individual> {
   public long id() { return id; }
   public boolean equals(Object o) {
     return o instanceof Individual &&
-      id == ((Individual)o).id;
+//      id == ((Individual)o).id;
+      name.equals(((Individual) o).name);
   }
   public int hashCode() {
     int result = 17;

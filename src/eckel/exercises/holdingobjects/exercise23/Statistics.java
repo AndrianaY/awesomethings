@@ -27,6 +27,7 @@ public class Statistics {
             }
             else
                 m.put(r, 1);
+
         }
          System.out.print("max times (" + max + ") appeared following number(s): ");
          for (Map.Entry<Integer, Integer> entry : m.entrySet()) {
