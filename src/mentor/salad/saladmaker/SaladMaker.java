@@ -24,7 +24,13 @@ public class SaladMaker {
     public void findIngredientByCalories(int calories){
 
     }
+    public void findIngredientByCalories(int smallerCalorie, int biggerCalorie){
+
+    }
     public void removeIngredientWithCaloriety(int calories){
+
+    }
+    public void removeIngredientWithCaloriety(int smallerCalorie, int biggerCalorie){
 
     }
     public void addIngredient(Ingredient ingredient, int weight){
