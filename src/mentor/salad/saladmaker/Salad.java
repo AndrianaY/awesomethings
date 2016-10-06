@@ -15,10 +15,12 @@ public class Salad implements Serializable {
     }
     Map<Ingredient, Integer> ingredients = new TreeMap<>();
     private String name;
+    public SaladMenu saladMenu;
 
     String getName(){
         return name;
     }
+    public void toMainMenu(){}
 
     public void makeSalad(Map<Ingredient, Integer> ingredients){
         this.ingredients = ingredients;

@@ -1,7 +1,11 @@
 package mentor.salad.saladmaker;
 
 import mentor.salad.ingredients.Ingredient;
+import mentor.salad.initialization.UserProfile;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -11,36 +15,36 @@ import java.util.Map;
  * Created by Andriana on 06.10.2016.
  */
 public class SaladsManager {
+    private MainMenu mainMenu = new MainMenu();
+    private Menu currentMenu = mainMenu;
+
     private List<Salad> salads = new ArrayList<>();
-    private Salad current = salads.get(salads.size()-1);
-    private Salad founded;
+    private Salad currentSalad = salads.get(salads.size()-1);
+    private Salad foundedSalad;
+    private UserProfile userProfile;
 
-    public void createSalad(String name){
-        if (findByName(name))
-            System.out.println("this salad already exists"); //todo: via logger
-        else
-            salads.add(new Salad(name));
-    }
+    private SaladMenu saladMenu = currentSalad.saladMenu;
 
-    private boolean findByName(String name){
-        for (Salad s:salads) {
-            if(name.equals(s.getName())) {
-                founded = s;
-                return true;
-            }
-        }
-        return false;
-    }
-    public void switchToSalad(String name){
-        if (findByName(name))
-            current = founded;
-        else
-            System.out.println("it doesnt exist"); //todo: log4j
-    }
+
+
+
+
     public void makeSalad(Map<Ingredient, Integer> ingredients){
-        current.makeSalad(ingredients);
+        currentSalad.makeSalad(ingredients);
     }
     public void sortSalad(Comparator<Ingredient> comparator){
-        current.sortSalad(comparator);
+        currentSalad.sortSalad(comparator);
     }
+    public void calculateCalories(){    }
+
+    public void addSalad(Salad salad){
+        salads.add(salad);
+        switchMenu(new SaladMenu());
+    }
+
+
+    public void displayMenu(){
+        currentMenu.display();
+    }
+
 }

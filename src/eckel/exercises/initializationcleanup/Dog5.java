@@ -3,6 +3,8 @@ package eckel.exercises.initializationcleanup;
 //        method should be overloaded based on various primitive data types, and print different types
 //        of barking, howling, etc., depending on which overloaded version is called. Write a main( )
 //        that calls all the different versions.
+//        5 with modification - Dog should have name. use overloaded constructor - default + constructor with name.
+//          default will call constructor with name passing some default dog-name. name should be printed in bark method
 /**
  * Created by Andriana on 04.09.2016.
  */
