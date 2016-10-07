@@ -16,32 +16,24 @@ import java.util.Map;
  */
 public class SaladsManager {
     private MainMenu mainMenu = new MainMenu();
+
     private Menu currentMenu = mainMenu;
 
-    private List<Salad> salads = new ArrayList<>();
-    private Salad currentSalad = salads.get(salads.size()-1);
-    private Salad foundedSalad;
-    private UserProfile userProfile;
-
-    private SaladMenu saladMenu = currentSalad.saladMenu;
 
 
+    public void performMenuAction(String menuAction){
+        currentMenu = performAction(menuAction);
+        setCurrentMenu();
 
-
-
-    public void makeSalad(Map<Ingredient, Integer> ingredients){
-        currentSalad.makeSalad(ingredients);
-    }
-    public void sortSalad(Comparator<Ingredient> comparator){
-        currentSalad.sortSalad(comparator);
-    }
-    public void calculateCalories(){    }
-
-    public void addSalad(Salad salad){
-        salads.add(salad);
-        switchMenu(new SaladMenu());
     }
 
+    private Menu performAction(String action){
+        return currentMenu.performAction(action);
+    }
+
+    private void setCurrentMenu(){
+        currentMenu = currentMenu.getCurrentMenu();
+    }
 
     public void displayMenu(){
         currentMenu.display();

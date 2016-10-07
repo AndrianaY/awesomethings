@@ -8,14 +8,25 @@ import java.io.InputStreamReader;
  * Created by Andriana_Yarmoliuk on 10/6/2016.
  */
 public abstract class Menu {
-    protected static SaladsManager sm = new SaladsManager();
-    protected static Menu current = new MainMenu();
+
+    protected static Menu currentMenu = new MainMenu();
+    protected static Menu prevMenu;
+
 
 
     public void switchMenu(Menu menu){
-        current = menu;
+        prevMenu = currentMenu;
+        currentMenu = menu;
+        currentMenu.display();
     }
+
+    public Menu getCurrentMenu(){
+        return currentMenu;
+    }
+
+
     public static String readData(){
+        System.out.println("please enter the data");
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         try {
             return br.readLine();
@@ -25,6 +36,6 @@ public abstract class Menu {
         return "smthng went wrong"; //todo: via logger
     }
     public abstract void display();
-    public abstract void performAction(String action);
+    public abstract Menu performAction(String action);
 
 }

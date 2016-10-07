@@ -9,10 +9,28 @@ import java.util.*;
 /**
  * Created by Andriana on 06.10.2016.
  */
-public class Salad implements Serializable {
+public class Salad {
     public Salad(String name){
         this.name = name;
     }
+
+    @Override
+    public boolean equals(Object object){
+        if(object == this)
+            return true;
+        if((object instanceof Salad) && (((Salad) object).name.equals(this.name)))
+            return true;
+        else
+            return false;
+    }
+    @Override
+    public int hashCode() {
+            int result = 17;
+            result = 31 * result + name.hashCode();
+            return result;
+    }
+
+
     Map<Ingredient, Integer> ingredients = new TreeMap<>();
     private String name;
     public SaladMenu saladMenu;
@@ -20,7 +38,7 @@ public class Salad implements Serializable {
     String getName(){
         return name;
     }
-    public void toMainMenu(){}
+
 
     public void makeSalad(Map<Ingredient, Integer> ingredients){
         this.ingredients = ingredients;
