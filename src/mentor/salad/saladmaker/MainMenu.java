@@ -1,73 +1,75 @@
 package mentor.salad.saladmaker;
 
-import mentor.salad.ingredients.Ingredient;
-
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
-import java.util.Map;
+
+import static mentor.salad.saladmaker.Manager.readData;
+
 
 /**
  * Created by Andriana_Yarmoliuk on 10/6/2016.
  */
 public class MainMenu extends Menu{
-    private List<Salad> salads = new ArrayList<>();
+    private static List<Salad> salads = new ArrayList<>();
     private Salad currentSalad;
     private Salad foundedSalad;
-    private SaladMenu saladMenu;
-
 
     @Override
     public void display() {
-        System.out.println("1 - create, 2 - switch to salad....");
+        System.out.println("1 - print existed salads, 2 - create, 3 - switch to salad....");
     }
-
-    public Menu performAction(String action){
+    public void performAction(String action){
         switch (action){
-            case "1": createNewSalad(readData()); return currentMenu;
-            case "2": switchToSalad(readData()); return currentMenu;
+            case "1": printSalads(); return;
+            case "2": createNewSalad(); return;
+            case "3": switchToSalad(); return;
         }
-        return currentMenu;
     }
-
-
-    private void createNewSalad(String name){
-        if (name.equals("smthng went wrong")) {
-            System.out.println("please try again");//todo: via logger received from readData
+    private void printSalads(){
+        for (Salad s:salads) {
+            System.out.println(s.getName());
         }
-        else if(findByName(name)) {
+        display();
+    }
+    private void createNewSalad(){
+        System.out.println("please enter the name");
+        readedData = readData();
+        if (readedData.equals("smthng went wrong")) {
+            System.out.println("please try again");//todo: via logger received from readData
+            readedData = readData();
+        }
+        else if(findByName(readedData)) {
             System.out.println("this salad already exists"); //todo: via logger
+            readedData = readData();
         }
         else {
-            System.out.println("\"" + name + "\" salad was created");
-            addSalad(new Salad(name));
+            System.out.println("\"" + readedData + "\" salad was created");
+            addSalad(new Salad(readedData));
             setCurretnSalad(salads.get(salads.size()-1));
-            saladMenu = new SaladMenu(currentSalad);
-            switchMenu(saladMenu);
+            nextMenu = new SaladMenu(currentSalad);
+            goToMenu(nextMenu);
         }
-
     }
-
-
-    private void switchToSalad(String name){
-        if (name.equals("smthng went wrong"))
-            System.out.println("please try again");//todo: via logger received from readData
-        else if (findByName(name)) {
+    private void switchToSalad(){
+        System.out.println("please enter salad name to switch");
+        readedData = readData();
+        if (readedData.equals("smthng went wrong")) {
+            System.out.println("smthng went wrong, please try again");
+            readedData = readData();
+        }//todo: via logger received from readData
+        else if (findByName(readedData)) {
             setCurretnSalad(foundedSalad);
-            saladMenu = currentSalad.saladMenu;
-            switchMenu(saladMenu);
-
+            nextMenu = new SaladMenu(currentSalad);
+            goToMenu(nextMenu);
         }
-        else
-            System.out.println("it doesnt exist"); //todo: log4j
-
+        else {
+            System.out.println("it doesnt exist. please try again"); //todo: log4j
+            readedData = readData();
+        }
     }
-
     private void setCurretnSalad(Salad salad){
         currentSalad = salad;
     }
-
-
     private boolean findByName(String name){
         for (Salad s:salads) {
             if(name.equals(s.getName())) {
@@ -77,12 +79,7 @@ public class MainMenu extends Menu{
         }
         return false;
     }
-
-
-    public void addSalad(Salad salad){
+    private void addSalad(Salad salad){
         salads.add(salad);
-
     }
-
-
 }

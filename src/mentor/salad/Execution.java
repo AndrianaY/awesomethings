@@ -1,25 +1,21 @@
 package mentor.salad;
 
-import mentor.salad.saladmaker.SaladsManager;
+import mentor.salad.saladmaker.Manager;
 
-import static mentor.salad.saladmaker.Menu.readData;
+import static mentor.salad.saladmaker.Manager.readData;
 
 /**
  * Created by Andriana_Yarmoliuk on 10/7/2016.
  */
 public class Execution {
-    protected static SaladsManager sm = new SaladsManager();
-
-
+    protected static Manager sm = new Manager();
 
     public static void main(String[] args) {
         sm.displayMenu();
-        String action = readData();
-        while(!action.equals("exit")){
-            sm.performMenuAction(action);
-            action = readData();
+        String readedData = readData();
+        while(!readedData.equals("exit")){
+            sm.performMenuAction(readedData);
+            readedData = readData();
         }
-
     }
-
 }

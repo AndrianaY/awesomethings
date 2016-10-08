@@ -1,47 +1,36 @@
 package mentor.salad.saladmaker;
 
-import mentor.salad.ingredients.Ingredient;
-
-import java.util.Comparator;
-import java.util.Map;
-
 /**
  * Created by Andriana_Yarmoliuk on 10/6/2016.
  */
 public class SaladMenu extends Menu{
     private Salad salad;
-    private MainMenu mainMenu;
 
     public SaladMenu(Salad salad){
         this.salad = salad;
     }
-
     @Override
     public void display() {
-        System.out.println("1- return to main menu, 2 - make salad, 3 - sort salad, 4 - calc calories.....");
+        System.out.println("currently working with " + salad.getName() + " salad");
+        System.out.println("1- return to main menu, 2 - go to choosing ingredients, 3 - make salad, 4 - sort salad, 5 - calc calories.....");
     }
-
     @Override
-    public Menu performAction(String action) {
+    public void performAction(String action) {
         switch (action){
-            case "1": toMainMenu(); return currentMenu;
-            case "2": makeSalad(salad.ingredients); return currentMenu;
-            case "3": calculateCalories(); return currentMenu;
-
+            case "1": toMainMenu(); return;
+            case "2": goToIngredients(); return;
+            case "3": makeSalad(); return;
         }
-        return currentMenu;
     }
-
-    public void makeSalad(Map<Ingredient, Integer> ingredients){
-
+    private void toMainMenu(){
+        goToMenu(prevMenu);
     }
-    public void sortSalad(Comparator<Ingredient> comparator){
-
+    private void goToIngredients(){
+        goToMenu(new IngreadientsMenu(salad));
     }
-    public void calculateCalories(){    }
-
-    public void toMainMenu(){
-        switchMenu(prevMenu);
+    private void makeSalad(){
+        salad.makeSalad();
+        display();
     }
 
 }

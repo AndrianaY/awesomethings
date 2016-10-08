@@ -1,19 +1,18 @@
 package mentor.salad.saladmaker;
 
 import mentor.salad.ingredients.Ingredient;
-import mentor.salad.ingredients.vegetables.Vegetable;
-
-import java.io.Serializable;
 import java.util.*;
 
 /**
  * Created by Andriana on 06.10.2016.
  */
 public class Salad {
+    Map<Ingredient, Integer> ingredients = new TreeMap<>();
+    private String name;
+
     public Salad(String name){
         this.name = name;
     }
-
     @Override
     public boolean equals(Object object){
         if(object == this)
@@ -29,27 +28,26 @@ public class Salad {
             result = 31 * result + name.hashCode();
             return result;
     }
-
-
-    Map<Ingredient, Integer> ingredients = new TreeMap<>();
-    private String name;
-    public SaladMenu saladMenu;
-
     String getName(){
         return name;
     }
+    public void makeSalad(){
+        if(ingredients!=null){
+            System.out.println("salad " + name + " was made");
+            for (Map.Entry<Ingredient, Integer> i:ingredients.entrySet()) {
+                System.out.println(i.getKey().getName());
+            }
+        }
 
+        else
+            System.out.println("there are no ingredients added");
 
-    public void makeSalad(Map<Ingredient, Integer> ingredients){
-        this.ingredients = ingredients;
     }
 
     public void sortSalad(Comparator<Ingredient> comparator){
         System.out.println("sorting " + name + " salad");
     }
-    public void calcCalories(){
-
-    }
+    public void calculateCalories(){    }
     public void findIngredientByCalories(int calories){
 
     }
