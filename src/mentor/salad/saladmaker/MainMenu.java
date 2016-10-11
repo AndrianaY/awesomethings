@@ -3,17 +3,26 @@ package mentor.salad.saladmaker;
 import java.util.ArrayList;
 import java.util.List;
 
-import static mentor.salad.saladmaker.Manager.readData;
+import static mentor.salad.saladmaker.Controller.readData;
 
 
 /**
  * Created by Andriana_Yarmoliuk on 10/6/2016.
  */
 public class MainMenu extends Menu{
+
     private static List<Salad> salads = new ArrayList<>();
     private Salad currentSalad;
     private Salad foundedSalad;
 
+     MainMenu(){
+        currentMenu = this;
+        parentMenu = this;
+        nextMenu = this;
+    }
+    public Menu getMainMenuInstance(){
+        return new MainMenu();
+    }
     @Override
     public void display() {
         System.out.println("1 - print existed salads, 2 - create, 3 - switch to salad....");
@@ -29,7 +38,6 @@ public class MainMenu extends Menu{
         for (Salad s:salads) {
             System.out.println(s.getName());
         }
-        display();
     }
     private void createNewSalad(){
         System.out.println("please enter the name");
@@ -46,8 +54,7 @@ public class MainMenu extends Menu{
             System.out.println("\"" + readedData + "\" salad was created");
             addSalad(new Salad(readedData));
             setCurretnSalad(salads.get(salads.size()-1));
-            nextMenu = new SaladMenu(currentSalad);
-            goToMenu(nextMenu);
+            moveNextMenu = nextMenu;
         }
     }
     private void switchToSalad(){
@@ -59,8 +66,7 @@ public class MainMenu extends Menu{
         }//todo: via logger received from readData
         else if (findByName(readedData)) {
             setCurretnSalad(foundedSalad);
-            nextMenu = new SaladMenu(currentSalad);
-            goToMenu(nextMenu);
+            moveNextMenu = nextMenu;
         }
         else {
             System.out.println("it doesnt exist. please try again"); //todo: log4j

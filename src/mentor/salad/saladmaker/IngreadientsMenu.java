@@ -1,17 +1,22 @@
 package mentor.salad.saladmaker;
 
-import mentor.salad.ingredients.Ingredient;
 import mentor.salad.ingredients.vegetables.Potatoe;
 
-import static mentor.salad.saladmaker.Manager.readData;
+import static mentor.salad.saladmaker.Controller.readData;
 
 /**
  * Created by Andriana on 08.10.2016.
  */
 public class IngreadientsMenu extends Menu {
     Salad salad;
-    IngreadientsMenu(Salad salad){
+    private IngreadientsMenu(Salad salad){
         this.salad = salad;
+        currentMenu = this;
+        parentMenu = this;
+        nextMenu = this;
+    }
+    public static Menu getIngrMenuInstance(Salad salad){
+        return new IngreadientsMenu(salad);
     }
     @Override
     public void display() {
@@ -28,7 +33,7 @@ public class IngreadientsMenu extends Menu {
         }
     }
     private void toPrevMenu(){
-        goToMenu(prevMenu);
+        nextMenu = parentMenu;
     }
     private void addIngredient(){
         System.out.println("enter the name of ingredient");

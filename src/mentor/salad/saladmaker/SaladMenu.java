@@ -6,8 +6,14 @@ package mentor.salad.saladmaker;
 public class SaladMenu extends Menu{
     private Salad salad;
 
-    public SaladMenu(Salad salad){
+    private SaladMenu(Salad salad){
         this.salad = salad;
+        currentMenu = this;
+        parentMenu = this;
+        nextMenu = this;
+    }
+    public static Menu getSaladMenuInstance(Salad salad){
+        return new SaladMenu(salad);
     }
     @Override
     public void display() {
@@ -23,14 +29,13 @@ public class SaladMenu extends Menu{
         }
     }
     private void toMainMenu(){
-        goToMenu(prevMenu);
+        moveNextMenu = parentMenu;
     }
     private void goToIngredients(){
-        goToMenu(new IngreadientsMenu(salad));
+        moveNextMenu = nextMenu;
     }
     private void makeSalad(){
         salad.makeSalad();
-        display();
     }
 
 }
