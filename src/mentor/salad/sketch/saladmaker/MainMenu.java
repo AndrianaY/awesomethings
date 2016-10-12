@@ -1,9 +1,9 @@
-package mentor.salad.saladmaker;
+package mentor.salad.sketch.saladmaker;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static mentor.salad.saladmaker.Controller.readData;
+import static mentor.salad.sketch.saladmaker.Controller.readData;
 
 
 /**
@@ -15,7 +15,7 @@ public class MainMenu extends Menu{
     private Salad currentSalad;
     private Salad foundedSalad;
 
-     MainMenu(){
+     public MainMenu(){
         currentMenu = this;
         parentMenu = this;
         nextMenu = this;

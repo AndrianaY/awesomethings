@@ -1,4 +1,4 @@
-package mentor.salad.saladmaker;
+package mentor.salad.sketch.saladmaker;
 
 /**
  * Created by Andriana_Yarmoliuk on 10/6/2016.

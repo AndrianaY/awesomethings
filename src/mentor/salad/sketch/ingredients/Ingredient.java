@@ -1,4 +1,4 @@
-package mentor.salad.ingredients;
+package mentor.salad.sketch.ingredients;
 
 /**
  * Created by Andriana on 06.10.2016.

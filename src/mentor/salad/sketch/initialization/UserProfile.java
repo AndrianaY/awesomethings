@@ -1,6 +1,6 @@
-package mentor.salad.initialization;
+package mentor.salad.sketch.initialization;
 
-import mentor.salad.saladmaker.Salad;
+import mentor.salad.sketch.saladmaker.Salad;
 import java.io.*;
 
 

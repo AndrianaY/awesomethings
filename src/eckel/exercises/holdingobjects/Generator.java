@@ -1,7 +1,7 @@
 package eckel.exercises.holdingobjects;
 //(3) Create a generator class that produces character names (as String
 //        objects) from your favorite movie (you can use Snow White or Star Wars as a fallback) each
-//        time you call next( ), and loops around to the beginning of the character list when it runs out
+//        time you call getNext( ), and loops around to the beginning of the character list when it runs out
 //        of names. Use this generator to fill an array, an ArrayList, a LinkedList, a HashSet, a
 //        LinkedHashSet, and a TreeSet, then print each container.
 

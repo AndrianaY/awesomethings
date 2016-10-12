@@ -1,6 +1,6 @@
-package mentor.salad.saladmaker;
+package mentor.salad.sketch.saladmaker;
 
-import mentor.salad.ingredients.Ingredient;
+import mentor.salad.sketch.ingredients.Ingredient;
 import java.util.*;
 
 /**

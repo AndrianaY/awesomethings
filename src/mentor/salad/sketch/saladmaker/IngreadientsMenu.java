@@ -1,8 +1,8 @@
-package mentor.salad.saladmaker;
+package mentor.salad.sketch.saladmaker;
 
-import mentor.salad.ingredients.vegetables.Potatoe;
+import mentor.salad.sketch.ingredients.vegetables.Potatoe;
 
-import static mentor.salad.saladmaker.Controller.readData;
+import static mentor.salad.sketch.saladmaker.Controller.readData;
 
 /**
  * Created by Andriana on 08.10.2016.

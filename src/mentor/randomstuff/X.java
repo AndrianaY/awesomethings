@@ -1,4 +1,4 @@
-package mentor;
+package mentor.randomstuff;
 
 /**
  * Created by Andriana on 28.09.2016.

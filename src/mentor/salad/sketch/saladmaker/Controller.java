@@ -1,4 +1,4 @@
-package mentor.salad.saladmaker;
+package mentor.salad.sketch.saladmaker;
 
 import java.io.BufferedReader;
 import java.io.IOException;

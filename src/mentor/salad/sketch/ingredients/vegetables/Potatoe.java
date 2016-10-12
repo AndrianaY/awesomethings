@@ -1,6 +1,6 @@
-package mentor.salad.ingredients.vegetables;
+package mentor.salad.sketch.ingredients.vegetables;
 
-import mentor.salad.ingredients.Usage;
+import mentor.salad.sketch.ingredients.Usage;
 
 /**
  * Created by Andriana on 06.10.2016.

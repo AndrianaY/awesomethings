@@ -1,15 +1,15 @@
-package mentor.salad;
+package mentor.salad.sketch;
 
-import mentor.salad.saladmaker.Controller;
-import mentor.salad.saladmaker.MainMenu;
+import mentor.salad.sketch.saladmaker.Controller;
+import mentor.salad.sketch.saladmaker.MainMenu;
 
-import static mentor.salad.saladmaker.Controller.readData;
+import static mentor.salad.sketch.saladmaker.Controller.readData;
 
 /**
  * Created by Andriana_Yarmoliuk on 10/7/2016.
  */
 public class Execution {
-    protected static Controller mc = new Controller(MainMenu.getMainMenuInstance());
+    protected static Controller mc = new Controller(new MainMenu());
 
     public static void main(String[] args) {
         mc.displayControllerEntryPoint();
