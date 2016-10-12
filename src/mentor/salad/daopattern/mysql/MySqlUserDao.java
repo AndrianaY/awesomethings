@@ -24,7 +24,7 @@ public class MySqlUserDao implements UserDao {
 
     @Override
     public User read(int key) throws SQLException {
-        String sql = "SELECT * FROM daotalk.Group WHERE id = ?;";// todo: setup DB server
+        String sql = "SELECT * FROM daotalk.user WHERE id = ?;";// todo: setup DB server
         PreparedStatement stm = connection.prepareStatement(sql);
 
         stm.setInt(1, key);

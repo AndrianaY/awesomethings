@@ -5,15 +5,11 @@ package mentor.salad.daopattern.domain;
  */
 public class User {
     private int id;
-    private int number;
     private String firstName;
     private String lastName;
+
     public void setId(int id) {
         this.id = id;
-    }
-
-    public void setNumber(int number) {
-        this.number = number;
     }
 
     public void setFirstName(String firstName) {

@@ -16,7 +16,7 @@ import java.sql.SQLException;
 public class MySqlDaoFactory implements DaoFactory {
 
     private String user = "root";//Логин пользователя
-    private String password = "";//Пароль пользователя
+    private String password = "123";//Пароль пользователя
     private String url = "jdbc:mysql://localhost:3306/daotalk";//URL адрес
     private String driver = "com.mysql.jdbc.Driver";//Имя драйвера
 
