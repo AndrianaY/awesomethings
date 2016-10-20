@@ -1,6 +1,5 @@
 package eckel.listings.generics;
 
-import javassist.compiler.ast.Pair;
 
 /**
  * Created by Andriana_Yarmoliuk on 10/20/2016.
