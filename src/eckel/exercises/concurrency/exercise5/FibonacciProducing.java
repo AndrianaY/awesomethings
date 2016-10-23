@@ -47,6 +47,7 @@ public class FibonacciProducing implements Callable<FibonacciProducing>{
                 e.printStackTrace();
             }
         }
+        exec.shutdown();
     }
 
     @Override
@@ -54,7 +55,7 @@ public class FibonacciProducing implements Callable<FibonacciProducing>{
         int fibNumber;
         for (int i = 1; i < capacity +1; i++) {
             fibNumber = fibonacci.next();
-            System.out.println("task " + id + ": " + i + " fibonacci number is: " + fibNumber);
+            System.out.println("task " + id + ": " + i + " fibonacci number is: " + fibNumber + "****" + Thread.currentThread());
             sum += fibNumber;
         }
         return this;
