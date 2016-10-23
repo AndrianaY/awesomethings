@@ -23,13 +23,13 @@ public class LiftOff implements Runnable {
         }
     }
 
-//    public static void main(String[] args) {
-//        Thread l = new Thread(new LiftOff(5));
-//        l.start();
-//        Thread l1 = new Thread(new LiftOff(7));
-//        l1.start();
-//        Thread l2 = new Thread(new LiftOff(3));
-//        l2.start();
-//        System.out.println("waing for liftout");
-//    }
+    public static void main(String[] args) {
+        Thread l = new Thread(new LiftOff(5));
+        l.start();
+        Thread l1 = new Thread(new LiftOff(7));
+        l1.start();
+        Thread l2 = new Thread(new LiftOff(3));
+        l2.start();
+        System.out.println("waing for liftout");
+    }
 }
