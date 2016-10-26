@@ -18,17 +18,17 @@ public class EvenChecker implements Runnable {
         while(!generator.isCanceled()){
             int val  = generator.next();
             if (val % 2 != 0) {
-                System.out.println(val + " not even!");
+                System.out.println(val + " not even! - " + Thread.currentThread() + "id - " + id);
                 generator.cancel();
             }
             else
-                System.out.println(val + " is even!");
+                System.out.println(val + " is even!- " + Thread.currentThread() + "id - " + id);
         }
     }
     public static void test(IntGenerator gp, int count){
         System.out.println("press ctrl-c to exit");
         ExecutorService exec = Executors.newCachedThreadPool();
-        for (int i = 0; i < count; i++)
+        for (int i = 1; i < count + 1; i++)
             exec.execute(new EvenChecker(gp, i));
         exec.shutdown();
     }
