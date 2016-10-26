@@ -36,7 +36,6 @@ public class EvenChecker implements Runnable {
         test(gp, 20);
     }
 
-
     public static void main(String[] args) {
         test(new IntGenerator() {
             Random random = new Random();
