@@ -5,6 +5,7 @@ package mentor.randomstuff;
  */
 public class Mentor1 {
 
+    byte bbb = 127;
     boolean[] b = new boolean[3];
     int count = 0;
 
@@ -27,5 +28,7 @@ public class Mentor1 {
         ba.set(ba.b, 0);
         ba.set(ba.b, 2);
         ba.test();
+        ba.bbb++;
+        System.out.println(ba.bbb + "bbb");
     }
 }
